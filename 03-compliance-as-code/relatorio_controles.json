@@ -1,0 +1,44 @@
+{
+  "gerado_em": "2026-08-08T23:24:55.383905",
+  "framework": "ISO/IEC 27001:2022 (Anexo A)",
+  "resumo": {
+    "total": 4,
+    "eficaz": 0,
+    "parcial": 2,
+    "ineficaz": 2
+  },
+  "controles": [
+    {
+      "id": "A.5.17",
+      "nome": "Autenticação Multifator",
+      "status": "PARCIAL",
+      "evidencia": "usuarios.csv",
+      "detalhes": "94.1% de 17 usuários ativos com MFA (1 sem MFA)",
+      "recomendacao": "Faltam 1 usuário(s) sem MFA: migrar contas de serviço."
+    },
+    {
+      "id": "A.8.13",
+      "nome": "Backup e Teste de Restore",
+      "status": "PARCIAL",
+      "evidencia": "backup.json",
+      "detalhes": "Último teste de restore: 2025-12-10 (241 dias) · último backup: 2026-08-06T03:00:00",
+      "recomendacao": "Agendar teste de restore do ambiente ERP (prioridade)."
+    },
+    {
+      "id": "A.8.10",
+      "nome": "Retenção e Exclusão de Dados",
+      "status": "INEFICAZ",
+      "evidencia": "politicas.json",
+      "detalhes": "Prazos excedidos: CVs de candidatos, Logs de auditoria",
+      "recomendacao": "Purgar dados excedentes e automatizar job de descarte."
+    },
+    {
+      "id": "A.5.15",
+      "nome": "Controle de Acesso (contas órfãs)",
+      "status": "INEFICAZ",
+      "evidencia": "contas_ativas.json",
+      "detalhes": "7 contas inativas >90d em 120 contas AD (5 sem dono)",
+      "recomendacao": "Automatizar desativação de contas no offboarding (integração RH x AD)."
+    }
+  ]
+}
